@@ -1,0 +1,51 @@
+body {border: 1px solid red;}
+header {
+    border: 1px solid yellow;
+    line-height: 80px;
+}
+nav {
+    border: 1px solid blue;
+    
+    
+}
+
+.gnb_menu {border: 1px solid purple;}
+
+
+h1 {
+    border: 1px solid bisque;
+    display: inline-block;
+    width: 15%;
+    
+}
+
+.gnb_wrap{
+    width: 80%;
+}
+.gnb { 
+    display: inline-block;
+}
+.gnb_menu {
+    border:1px solid pink;
+    padding: 0 10px;
+    
+    text-align: center;
+    
+}
+.gnb_dropmenu{
+    display: none;
+}
+
+.gnb_menu:hover .gnb_dropmenu{
+    display: block;
+}
+
+.gnb_dropmenu_item{border: 1px solid tomato;
+    
+}
+
+.site_map {
+    display: inline;
+    
+}
+
