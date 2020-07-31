@@ -1,0 +1,434 @@
+* {
+    box-sizing: border-box;
+  }
+
+
+.main_content{
+    /* border: 1px solid blue; */
+    max-width: 100%;
+    padding: 0 160px 196px;
+}
+.content_summary{
+    /* border: 1px solid red; */
+    margin-top: 67px;
+}
+
+.summary_container{
+    border-right: 1px solid rgb(000, 000, 000, 0.1);
+    float: left;
+    width: 26.6%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.summary_container:last-child{
+    width: 20.2%;
+    padding-right: 0;
+    border-right: 0;
+}
+.summary_container:first-child{
+    padding-left: 0;
+}
+.content_summary:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.summary_container:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* h3 title*/
+.summary_title{
+    font-family: "NanumSquare-EB", "나눔고딕", "돋움", "Dotum", sans-serif;
+    font-size: 14px;
+    color: #212121;
+}
+.news_box{
+    width: 100%;
+    height: 76px;
+    margin: 31px 0 30px;
+}
+.news_title{
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-family: 'NanumSquare-B', 나눔고딕, 돋움, 'Dotum', sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+.news_text{
+    height: 44px;
+    margin-top: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 15px;
+    color: #878890;
+    line-height: 1.6;
+}
+.news_box a:hover .news_title,
+.news_box a:focus .news_title{
+    text-decoration:underline;
+}
+
+.career_text{
+    height: 76px; /* p태그는 block요소라 height값 선언 가능 */
+    margin: 31px 0 30px;
+    font-family: 'NanumSquare-EB', '나눔고딕', '돋움', 'Dotum', sans-serif;
+    font-size: 18px;
+    color: #333;
+}
+
+
+/* stock */
+.stock_info_box{
+    height: 76px;
+    margin: 23px 0 38px;
+    color: #333;
+}
+.price{
+    float: left;
+    font-family: 'NanumSquare-EB', 나눔고딕, 돋움, 'Dotum', sans-serif;
+    font-size: 36px;
+    letter-spacing: -1.7px;
+}
+
+.unit{
+    font-size: 12px;
+    font-family: 'NanumSquare-EB', 나눔고딕, 돋움, 'Dotum', sans-serif;
+}
+
+.figure{
+    margin-top: 21px;
+}
+.figure.type{
+    float: right;
+}
+.stock_price_box:after{
+    content: '';
+    display: block;
+    clear: both; /*초기화*/
+}
+
+.stock_price_box{
+    padding-bottom: 7px;
+    border-bottom: 1px solid #000;
+}
+
+.figure.type:before{
+    content:'';
+    display: inline-block;
+    width: 10px;
+    height: 6px;
+    background: url('../img/sprite.png') no-repeat;
+    background-size: 474px 1250px;
+    -webkit-backdrop-size: 474px 1250px;
+    background-position: -287px -38px;
+    margin-right: 10px; /* no-repeat했던 이미지가 보이기 때문에 padding값을 쓰지 않음 */
+}
+
+.date{
+    /* border: 1px solid purple; */
+    text-align: right;
+    margin-top: 12px;
+    font-size: 12px;
+    font-family: 'NanumSquare', 나눔고딕, 돋움, 'Dotum', sans-serif;
+    color: #878890;
+}
+
+.summary_link{
+    padding-right: 32px;
+    font-family: 'NanumSquare-B', 나눔고딕, 돋움, 'Dotum', sans-serif;
+    font-size: 15px;
+    color: #333;
+    position: relative;
+}
+
+.icon_arrow{
+    /* border: 1px solid green; */
+    display: block;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: 0;
+    top: -1px;
+}
+.icon_arrow:before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 8px;
+    background: url('../img/sprite.png') no-repeat;
+    background-size: 474px 1250px;
+    -webkit-backdrop-size: 474px 1250px;
+    background-position: -102px -50px;
+    transform: translate(-50%, -50%); /* transform은 브라우저마다 달라서 webkit 선언 필요*/
+    -webkit-transform: translate(-50%, -50%);
+}
+
+/* .icon_arrow1{
+    border: 1px solid blue;
+    color: #333;
+    margin-left: 10px;
+} */
+
+.summary_link:hover, .summary_link:focus{
+    text-decoration: underline;
+
+}
+.icon_arrow:hover .icon_arrow,
+.icon_arrow:focus .icon_arrow{
+    background-color: #80c73c;
+}
+.summary_link:hover .icon_arrow:before, 
+.summary_link:focus .icon_arrow:before{
+width: 6px;
+height: 10px;
+background-position: -108px -49px;
+}
+
+/* 네이버 서비스 */
+
+.content_service{
+    margin-top: 98px;
+}
+
+.service_list_container{
+    font-size: 0;
+}
+
+.service_thumbnail_box{ /* margin의 겹침 현상: 부모의 존재가치가 없을때 > padding으로 height 값을 줄 수 있음. (존재가 없다고 인식할때 내부공간 활용 >> width의 %를 인식)*/
+    /* border: 1px solid red; */
+    display: inline-block;
+    width: 33.3%; /* 부모의 padding값이 있는 경우 %로 사용 가능; px로는 그냥 가능 */
+    padding-top: 25%; /* height 값에서 아무거나 상관 없이 줌 left나 right은 불가 */ /* img 비율 */
+    background-size: cover; /* 모든걸 덮는다 */ /* 기본적으로는 content의 크기대로 진행되며, width값을 주면 content를 덮는다. */
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+.service_thumbnail_box.list1{
+    background-image: url('../img/img_main_content1.png');
+}
+.service_thumbnail_box.list2{
+    background-image: url('../img/img_main_content2.png');
+}
+.service_thumbnail_box.list3{
+    background-image: url('../img/img_main_content3.png');
+}
+.service_thumbnail_box.list4{
+    background-image: url('../img/img_main_content4.png');
+}
+.service_thumbnail_box.list5{
+    background-image: url(../img/img_main_content5.png);
+}
+.service_thumbnail_box.list6{
+    background-image: url(../img/img_main_content6.png);
+}
+.service_thumbnail_box.list7{
+    background-image: url(../img/img_main_content7.png);
+}
+.service_thumbnail_box.list8{
+    background-image: url(../img/img_main_content8.png);
+}
+.service_thumbnail_box.list9{
+    background-image: url(../img/img_main_content9.png);
+}
+.ervice_thumbnail_box:nth-child(2), /* 완벽하게 100%로 사이즈를 맞출때*/
+.ervice_thumbnail_box:nth-child(5),
+.ervice_thumbnail_box:nth-child(8){
+    width: 33.4%;
+} 
+
+.thumbnail_dimmed{
+    display: block;
+    font-size: 15px;
+    position: absolute; /* 공간감 상관없이 띄우기 위해*/
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(58, 62, 80, 0.5);
+
+    opacity: 0; /* opacity 사용시 filter 사용 */
+    filter: alpha(opacity=0);
+    transition: opacity .3s; /* transition 사용시 -webkit- 사용 */
+    -webkit-transition: opacity .3s;
+}
+
+.thumbnail_dimmed dl dt{
+    font-family: "NanumSquare-EB", "나눔고딕", "돋움", "Dotum", sans-serif;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 2px;
+}
+.thumbnail_dimmed dl dd{
+    font-family: "NanumSquare-L", "나눔고딕", "돋움", "Dotum", sans-serif;
+    /* font-size: 15px; 설정 안하면 자동으로 15px */ 
+    color: #fff;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.thumbnail_dimmed dl{
+    /* border: 1px solid blue; */
+    position: absolute;
+    padding-left: 30px; /* left는 100%를 넘어가기때문에 공간을 만들고 padding값으로 위치 조정*/
+    padding-top: 50px;
+    bottom: -130px;
+    width: 100%;
+
+    transition: bottom 0.3s;
+    -webkit-transition: bottom 0.3s;
+}
+
+.thumbnail_dimmed dl:before{
+    /* border: 1px solid purple; */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 30px;
+    width: 23px;
+    height: 23px;
+    background: url('../img/sprite.png') no-repeat;
+    background-size: 474px 1250px;
+    -webkit-background-size: 474px 1250px;
+    background-position: -199px -129px;
+    /* 위치(포지션) > 공간 사이즈(이미지 크기) > 백그라운드 이미지 선언(좌표) > 백그라운드 위치 */
+}
+
+/* hover style > opacity */
+    
+.thumbnail_dimmed:focus{
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+/* .service_thumbnail_box{
+    overflow: hidden;
+} */
+
+.service_thumbnail_box:hover .thumbnail_dimmed{
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+
+
+/* hover style > bottom up */
+.thumbnail_dimmed:focus dl{
+    bottom:30px;
+}
+.service_thumbnail_box:hover .thumbnail_dimmed dl{
+    bottom: 30px;
+}
+
+
+/* content support*/
+.content_support{
+    margin-top: 112px;
+    text-align: center;
+}
+
+.support_title{
+    margin-bottom: 17px;
+    font-family: "NanumSquare-B", "나눔고딕", "돋움", "Dotum", sans-serif;
+    font-size: 32px;
+    color: #212121;
+}
+.support_text{
+    margin-bottom: 134px;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+
+ul.support_list_container{
+    max-width: 1360px;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+    }
+
+li.support_list_box{
+    width: 25%;
+    float: left;
+    /* clear: both; 그 이후에 나오는 것들을 위해 */
+    border-right: 1px solid rgba(68, 62, 80, 0.1);
+}
+li.support_list_box:last-child{
+    border-right: none;
+}
+
+ul.support_list_container:after{
+    content: '';
+    display: block;
+    clear: both; /*float 적용 안됨*/
+}
+
+li.support_list_box a{
+    /* border: 1px solid red; */
+    display: block; /* li때문에 inline-block으로 안함 */
+    width: 100%;
+    padding: 135px 10px 0;
+    position: relative;
+}
+li.support_list_box a:before{
+    /* border: 1px solid blue; */
+    content: '';
+    position: absolute;
+    height: 100px;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -o-webkit-transform: translateX(-50%);
+    -moz-webkit-transform: translateX(-50%);
+    -ms-webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background: url(../img/sprite.png) no-repeat;
+    -webkit-background-size: 474px 1250px;
+    background-size: 474px 1250px;
+}
+
+/* content를 가상으로 만들면 정확한 name을 써주어야 함 */
+li.support_list_box a.creators:before{
+    width: 88px;
+    background-position: 0 -957px;
+}
+li.support_list_box a.business:before{
+    width: 101px;
+    background-position: -92px -957px;
+}
+li.support_list_box a.developers:before{
+    width: 110px;
+    background-position: -199px -957px;
+}
+li.support_list_box a.flower:before{
+    width: 93px;
+    background-position: -316px -957px;
+}
+
+.support_list_box a:hover dt
+.support_list_box a:focus dt{
+    text-decoration: underline;
+}
+
+.support_list_box dt{
+    margin-bottom: 10px;
+    font-family: "NanumSquare-B", "나눔고딕", "돋움", "Dotum", sans-serif;
+    font-size: 16px;
+    color: #00b843 ;
+}
+ 
+.support_list_box dd{
+    font-size: 15px;
+    color: #878888;
+    line-height: 1.6;
+}

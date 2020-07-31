@@ -1,0 +1,28 @@
+h1{
+    text-align: center;
+}
+h2{
+    display: inline-block;
+}
+.top_sidebar_naver a{
+    text-decoration: none;
+    
+}
+#op_page{
+    color: #000;
+}
+
+.top_sidebar_naver ul{
+    /* border: 1px solid blue; */
+    display: inline-block;
+}
+.top_sidebar_naver ul li{
+    /* border: 1px solid red; */
+    display: inline-block;
+    font-size: 13px;
+    
+    
+}
+.top_sidebar_naver ul li a:hover {
+    text-decoration: underline;
+}

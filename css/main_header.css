@@ -1,0 +1,298 @@
+*{box-sizing: border-box;}
+
+
+header{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+    min-width: 1120px;
+    background-color: rgb(255, 255, 255, 0.8);
+}
+
+.header_wrap{
+    max-width: 1600px;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+    text-align: center; /** 로고와 언어선택은 float 상태고 nav는 line이라 가능 **/
+}
+
+nav:after, header:before{
+    content: '';
+}
+
+.gnb_dropmenu_wrap{
+    display: none;
+    min-width: 1200px;
+    height: 276px;
+    background-color: rgb(37, 197, 69);
+    z-index: 999; /** layer 개념으로 숫자가 클수록 상위노출 (float 처럼 띄움) **/
+    position: absolute; /** 브라우저 기준으로 위치 지정 **/
+    left: 0;
+    right: 0;
+    top: 80px;
+    text-align: center;
+    font-size: 0; /** ul태그라 공백을 없애려고 **/
+    margin: 0;
+    padding: 0;
+}
+.gnb_dropmenu_wrap > li{
+    display: inline-block;
+    width: 190px;
+    height: 276px;
+    padding-top: 28px;
+    font-size: 1rem;
+    vertical-align: top;
+    border: 1px solid rgb(255, 255, 255, 0.3);
+    list-style: none;
+    position: relative;
+    transition: all, .3s;
+}
+.gnb_dropmenu_wrap > li:hover{
+    background-color: #0fb93c;
+    
+}
+.gnb_menu_list:hover .gnb_dropmenu_wrap{
+    display: block;
+}
+
+h1.header_logo{
+    /* border: 1px solid blue; */
+    width: 87px;
+    height: 17px;
+    margin: 32px 0 0 32px;
+    background: url("../img/header_logo.png") no-repeat;
+    background-size: cover;
+    float: left;
+}
+ /** .header_logo a{
+    display: block; inline-block 가능 
+    width: 100%;
+    height: 100%;
+} **/
+
+nav{
+    /* border: 1px solid powderblue; */
+    display: inline-block;
+}    
+
+ul.gnb_menu{
+    font-size: 0; /** li는 띄어쓰기가 한칸 있기때문에 ul에서 띄어쓰기를 없애준다 **/
+    text-align: center; /** line(텍스트화) 요소라 가능 **/
+}
+li.gnb_menu_list, li.gnb_menu_list_recruit{ /** .gnb_menu .gnb_menu_list 으로 사용 가능 **/
+    display: inline-block;
+    font-size: 1rem;
+}
+a.gnb_menu_item{ /** class값이 있는 a **/
+    /*border: 1px solid red; */
+    display: block; 
+    margin: 0 32px;
+    padding: 30px 0px 30px; /** 내부 스타일이 필요 **/
+    color: #333;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: "NanumSquare", "나눔고딕", "Dotum", "돋움", "Helvetica", "Arial", "AppleSDGothicNeo", sans-serif;
+
+    
+}
+.gnb_menu_item:before{
+    content: '';
+    position: absolute;
+    left: -1px;
+    bottom: 20px;
+    width: calc(100% + 2px);
+    height: 2px;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; /* 요소의 중심점 초기엔 50% 50%*/
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+}
+
+li.gnb_menu_list:hover .gnb_menu_item:hover,
+li.gnb_menu_list:focus .gnb_menu_item:focus{    
+    transform: scaleX(1);
+}    
+
+
+.header_util{
+    /* display: inline-block;
+    position: relative; */
+    /* border: 1px solid red; */
+    float: right;
+    margin: 29px 25px 0 0;
+    width: 144px;
+    text-align: center;
+    font-style: normal;
+    vertical-align: middle;
+}
+.header_lang{
+    /* border: 1px solid black; */
+    display: inline-block;
+    vertical-align: middle;
+    height: 23px;
+    font-size: 12px;
+    /* box-sizing: 40px; */
+    margin: 0 41px 0 0 ;
+    padding: 0;
+    color: #000;
+    font-family: "NanumSquare", "나눔고딕", "Dotum", "돋움", "Helvetica", "Arial", "AppleSDGothicNeo", sans-serif;
+    /* text-align: center; */
+    
+}
+.header_lang a{
+    /* content: ''; */
+    /* clear: both; */
+    /* text-align: center; */
+    position: relative;
+    color:#333;
+    /* float: left; */
+    height: 13px;
+    
+}
+
+.gnb_dropmenu_wrap > .header_lang a:first-child{
+    color:#333;
+    border-right: 1px solid rgba(0,0,0,0.3);
+    padding-right: 11px;
+    margin-right: 21px;
+    text-align: center;
+    position: relative;
+    }
+
+
+     .header_lang a:first-child{
+        color:#333;
+        border-right: 1px solid rgba(0,0,0,0.3);
+        padding-right: 10px;
+        margin-right: 10px;
+        height: 12px;
+        text-align: center;
+        position: relative;
+        text-decoration: none;
+        }
+    /* .header_lang a:last-child{
+        padding: 0;
+        margin: 0;
+        color: rgba(0, 0, 0, 0.5);
+        } */
+
+
+a.gnb_dropmenu_wrap{
+    display:none ;
+    min-width: 1100px;
+    height: 276px;
+    background-color: rgb(30,197,69);
+    z-index: 999;
+    text-align: center;
+    font-size: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+   }
+
+   /* a.gnb_menu_item */
+   
+.gnb_dropmenu > li{
+    /* border: 1px solid blue; */
+    text-align: left;
+    margin: 0 0 5px;
+    font-size: 15px;
+}  
+.gnb_dropmenu a{
+    color: #fff;
+    font-size: 15px;
+}
+.gnb_dropmenu > li, .depth_blank{
+    margin-bottom: 14px;
+}
+
+
+li.classify{
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    margin-bottom: 25px;
+    padding-top: 22px;
+    /* border: 1px solid red; */
+    display: block;
+}
+
+.classify li:first-child{
+    /* border: 1px solid blue; */
+    padding-top: 0;
+    border-top: 0;
+}
+
+
+
+/* li.classify{
+    border: 1px solid red;
+    margin-bottom: 5px; 
+}*/
+
+/* .gnb_dropmenu classify1{
+    
+} */
+
+/*.gnb_dropmenu{
+     border: 1px solid yellowgreen; 
+}*/
+
+a.gnb_dropmenu_item{
+    /* border: 1px solid purple; */
+    display: block;
+    padding: 0 0 0 28px;
+    margin: 0;    
+    /* position: static; */
+    line-height: 18px;
+    
+   
+}
+.gnb_dropmenu_item .depth{
+    color: rgba(255,255,255,0.5);
+}
+.gnb_dropmenu_item .depth:hover{
+    color: rgba(255,255,255,1);
+    /* text-decoration: underline; */
+}
+
+.depth_blank{
+    margin-bottom: 10px;
+}
+
+
+
+/* .header_lang{
+    border: 1px solid green;
+    padding-right: 50px;
+    padding-top: 23px;
+    width: 144px;
+    height: 23px;
+    position: absolute;
+    float: left;
+} 
+    .header_lang a{
+     display: inline;
+    /* border: 1px solid purple;
+   
+    color: #000;
+    font-size: 12px;
+    width: 40px;
+} */
+
+
+
+.sitemap_box{
+    /* border: 1px solid purple; */
+    display: inline-block;
+    background: url('../img/sprite.png') no-repeat;
+    background-size: 474px 1250px;
+    -webkit-background-size: 474px 1250px;
+    background-position: 1px 1px;
+    width: 24px;
+    height: 23px;
+    margin: 0;
+    padding: 0;
+   vertical-align: middle;
+}
+

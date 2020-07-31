@@ -1,0 +1,207 @@
+.header_wrap{
+    max-width: 1120px;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+    text-align: center; /** 로고와 언어선택은 float 상태고 nav는 line이라 가능 **/
+}
+
+nav:after
+header:before{
+    content: '';
+}
+
+.gnb_dropmenu_wrap{
+    display: none;
+    min-width: 1100px;
+    height: 276px;
+    background-color: rgb(37, 197, 69);
+    z-index: 999; /** layer 개념으로 숫자가 클수록 상위노출 (float 처럼 띄움) **/
+    position: absolute; /** 브라우저 기준으로 위치 지정 **/
+    left: 0;
+    right: 0;
+    top: 80px;
+    text-align: center;
+    font-size: 0; /** ul태그라 공백을 없애려고 **/
+}
+.gnb_dropmenu_wrap > li{
+    display: inline-block;
+    width: 190px;
+    height: 276px;
+    padding-top: 28px;
+    font-size: 1rem;
+    vertical-align: top;
+    border: 1px solid rgb(255, 255, 255, 0.3);
+}
+.gnb_dropmenu_wrap > li:hover{
+    background-color: #0fb93c;
+    
+}
+.gnb_dropmenu_wrap > .header_lang a:first-child{
+    color: #333;
+    border-right: 1px solid rgba((0,0,0,0.3);
+    padding-right: 11px;
+}
+.gnb_menu_list:hover .gnb_dropmenu_wrap{
+    display: block;
+}
+h1.header_logo{
+    /* border: 1px solid blue; */
+    width: 87px;
+    height: 17px;
+    margin: 35px 0 0  35px; /* 32px */
+    background-image: url(../img/header_logo.png);
+    background-size: cover;
+    float: left;
+}
+.header_logo a{
+    display: block; /** inline-block 가능 **/
+    width: 100%;
+    height: 100%;
+}
+nav{
+    /* border: 1px solid powderblue; */
+    display: inline-block;  
+      
+}    
+
+ul.gnb_menu{
+    font-size: 0; /** li는 띄어쓰기가 한칸 있기때문에 ul에서 띄어쓰기를 없애준다 **/
+    text-align: center; /** line(텍스트화) 요소라 가능 **/
+}
+    li.gnb_menu_list, li.gnb_menu_list_recruit{ /** .gnb_menu .gnb_menu_list 으로 사용 가능 **/
+    display: inline-block;
+    font-size: 1rem;
+    }
+
+.header_util{
+    border: 1px solid red;
+    float: right;
+    margin: 30px 25px 0 0;
+    width: 144px;
+    
+}
+a.gnb_menu_item{ /** class값이 있는 a **/
+    display: block; 
+    margin: 0 32px;
+    padding: 30px 0px 30px; /** 내부 스타일이 필요 **/
+    color: #333;
+    font-size: 15px;
+    font-weight: bold;   
+}
+a.gnb_menu_item:before{
+    content: '';
+    position: absolute;
+    left: -1;
+    bottom: 20px;
+    width: calc(100% + 2px);
+    height: 2px;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1),
+    -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+li.gnb_menu_list:hover .gnb_menu_item:before,
+li.gnb_menu_list:focus .gnb_menu_item:focus{
+    transform: scaleX(1);    
+}    
+
+.gnb_dropmenu{
+    /* border: 1px solid red;  */
+}
+.gnb_dropmenu > li{
+    /* border: 1px solid blue; */
+    text-align: left;
+     /**  padding-left: 30px; **/
+    margin: 0 0 5px;
+    font-size: 15px;
+    
+}
+.gnb_dropmenu a{
+    color: #fff;
+    font-size: 15px;
+}
+.gnb_dropmenu > li, .dapth_blank{
+    margin-bottom: 14px;
+}
+.classify{
+    border-top: 1px solid rgba(255,255,255,0.3);
+    margin-bottom: 25px;
+    padding-top: 17px;
+}
+.classify:first-child{
+    padding-top: 0;
+    border-top: 0;
+}
+
+
+a.gnb_dropmenu_wrap{
+    display:none ;
+    min-width: 1100px;
+    height: 276px;
+    background-color: rgb(30,197,69);
+    z-index: 999;
+    text-align: center;
+    font-size: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+
+}
+
+
+a.gnb_dropmenu_item{
+    /* border: 1px solid purple; */
+    color: white;
+    display: block;
+    padding-left: 28px;
+}
+
+.dapth_blank{
+    margin-bottom: 10px;
+}
+
+.header_lang{
+    border: 1px solid green;
+    padding-right: 50px;
+    padding-top: 23px;
+    width: 144px;
+    height: 23px;
+    position: absolute;
+    float: left;
+    display: inline-block;
+    vertical-align: top;
+   
+}
+
+.header_lang a{
+    /* display: inline; */
+    /* border: 1px solid purple; */
+    text-decoration: none;
+    color: #000;
+    font-size: 12px;
+    width: 40px;
+    
+    
+}
+
+.sitemap_box{
+    /* border: 1px solid purple; */
+    display: inline-block;
+    background: url('../img/sprite.png') no-repeat;
+    background-size: 474px 1250px;
+    -webkit-background-size: 474px 1250px;
+    background-position: 1px 1px;
+    width: 25px;
+    height: 15px;
+   
+}
+
+.gnb_dropmenu_item .dapth{
+    color: rgba(255.255,255,0.7);
+}
+
+.gnb_dropmenu_item .dapth:hover{
+    color: rgba(255,255,255,1);
+}
+
